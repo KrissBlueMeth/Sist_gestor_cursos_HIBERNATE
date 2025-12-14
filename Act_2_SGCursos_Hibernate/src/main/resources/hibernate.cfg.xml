@@ -1,3 +1,20 @@
-<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
-    <session-factory></session-factory>
-</hibernate-configuration>
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sg_cursos</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <property name="hibernate.hbm2ddl.auto">create</property>
+
+        <mapping class="modelo.Profesor"/>
+        <mapping class="modelo.Curso"/>
+        <mapping class="modelo.Estudiante"/>
+
+    </session-factory> </hibernate-configuration>
