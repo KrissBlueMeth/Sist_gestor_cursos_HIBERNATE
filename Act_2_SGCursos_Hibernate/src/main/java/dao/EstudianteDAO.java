@@ -1,4 +1,6 @@
 package dao;
 
-public interface EstudianteDAO {
+import modelo.Estudiante;
+
+public interface EstudianteDAO extends DAOGenerico<Estudiante, Long>{
 }

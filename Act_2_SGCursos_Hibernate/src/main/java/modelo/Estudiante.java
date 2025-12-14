@@ -34,4 +34,9 @@ public class Estudiante implements Serializable{
             inverseJoinColumns = @JoinColumn(name = "curso_fk") // Columna que referencia a Cursos (el lado inverso)
     )
     private Set<Curso> cursos = new HashSet<>();
+
+    //Este constructor lo añado manual porque en el mainapp me salia error al usar el @data
+    public Estudiante(String nombre) {
+        this.nombre = nombre;
+    }
 }

@@ -28,4 +28,9 @@ public class Profesor implements Serializable {
     @OneToMany(mappedBy = "profesor", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Curso> cursos = new ArrayList<>();
 
+//Este constructor lo añado manual porque en el mainapp me salia error al usar el @data
+    public Profesor(String nombre) {
+        this.nombre = nombre;
+    }
+
 }

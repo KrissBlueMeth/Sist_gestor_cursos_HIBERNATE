@@ -37,4 +37,8 @@ public class Curso implements Serializable {
     private Set<Estudiante> estudiantes = new HashSet<>();
 
 
+    //Este constructor lo añado manual porque en el mainapp me salia error al usar el @data
+    public Curso(String nombre) {
+        this.nombre = nombre;
+    }
 }
