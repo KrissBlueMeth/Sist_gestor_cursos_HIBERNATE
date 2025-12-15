@@ -3,6 +3,7 @@ package modelo;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
@@ -16,6 +17,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "Cursos") // definimos nombre de la tabla
+@EqualsAndHashCode(exclude = {"profesor", "estudiantes"})
 
 public class Curso implements Serializable {
 

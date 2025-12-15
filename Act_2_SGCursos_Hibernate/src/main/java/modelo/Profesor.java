@@ -3,6 +3,7 @@ package modelo;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
@@ -14,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "Profesores") // definimos nombre de la tabla
+@EqualsAndHashCode(exclude = "cursos")
 public class Profesor implements Serializable {
 
     // Clave Primaria (PK)

@@ -17,7 +17,7 @@ public class MainApp {
     private final EstudianteDAOGenericoImpl estudianteDAO = new EstudianteDAOGenericoImpl();
 
     public static void main(String[] args) {
-        // La creación de la instancia ahora funciona sin error:
+        // aqui creo la instancia
         MainApp app = new MainApp();
 
         // 1. Inserción de los datos iniciales
@@ -37,7 +37,7 @@ public class MainApp {
         Curso c1 = new Curso("Hibernate Básico");
         Curso c2 = new Curso("MySQL Avanzado");
 
-        // 🔄 MANTENIENDO BIDIRECCIONALIDAD MANUALMENTE (sin métodos de ayuda):
+        // Esto es para hacer la BIDIRECCIONALIDAD MANUALMENTE:
         // Lado Uno (Profesor) y Lado Muchos (Curso) sincronizados:
         prof1.getCursos().add(c1);
         prof1.getCursos().add(c2);
@@ -53,7 +53,7 @@ public class MainApp {
         Estudiante e2 = new Estudiante("Bob Williams");
         Estudiante e3 = new Estudiante("Charlie Brown");
 
-        // 🔄 MANTENIENDO BIDIRECCIONALIDAD MANUALMENTE (sin métodos de ayuda) para Many-to-Many:
+        // igual que antes para la bideccionalidad sin metodos "extra" de ayuda, para Many-to-Many:
 
         // e1 en c1
         e1.getCursos().add(c1);
@@ -69,7 +69,7 @@ public class MainApp {
         e3.getCursos().add(c1);
         c1.getEstudiantes().add(e3);
 
-        // Como Curso no tiene un método de persistencia directo aquí,
+        // Como Curso no tiene un metodo de persistencia directo aquí,
         // dependemos de que Hibernate persista los cambios a c1 y c2 a través de las relaciones
         // y de que las llamadas a estudianteDAO.save(eN) guarden a los estudiantes.
 
